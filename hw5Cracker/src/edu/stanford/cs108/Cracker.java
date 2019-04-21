@@ -42,7 +42,7 @@ public class Cracker {
 	// a! 242ed53862c43c5be5f2c5213586d50724138dea7ae1d8760752c91f315dcd31
 	// xyz 3608bca1e44ea6c4d268eb6db02260269892c0b42b86bbf1e77a6fa16c3c9282
 
-	private static List<String> hackResult = Collections.synchronizedList(new ArrayList<String>());
+	private static List<String> hackResult = Collections.synchronizedList(new ArrayList<String>());  // can directly use vector 
 	private static String password;
 	private static CountDownLatch latch;
 	private static byte[] shaArray;
@@ -76,6 +76,7 @@ public class Cracker {
 			}
 
 			// print all results
+			// the main thread waits for worker threads
 			try {
 				latch.await();
 			} catch (InterruptedException e) {
